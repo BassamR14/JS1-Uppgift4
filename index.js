@@ -47,6 +47,8 @@ function findStrawberry(arr) {
     // } else {
     //   return false;
     // }
+
+    // since it is T/F you can just return what you need.
     return arr[i] == "strawberry";
   }
 }
