@@ -28,7 +28,7 @@ function multiplyArray(arr) {
   // set it to 1 so that you dont get a NaN error, since multipliedNumber is undefined at the start. so 1*5 makes multipliedNumber 5, so next iteration you get 5*4 and etc.
   let multipliedNumber = 1;
   for (i = 0; i < arr.length; i++) {
-    multipliedNumber = multipliedNumber * arr[i];
+    multipliedNumber *= arr[i];
   }
   return multipliedNumber;
 }
