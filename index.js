@@ -384,3 +384,38 @@ function allEven(arr) {
 }
 
 console.log(allEven(array7));
+
+// 1-5 again but without using for loops
+
+//1
+
+let evenNumberArray = array.filter((item) => {
+  return item % 2 == 0;
+});
+
+console.log(evenNumberArray);
+
+//2
+
+let mulpliedNumber2 = array2.reduce((multiplicationResult, item) => {
+  return item * multiplicationResult;
+}, 1);
+
+console.log(mulpliedNumber2);
+
+//3
+
+let includesStrawberry = fruitArray.includes("strawberry");
+
+console.log(includesStrawberry);
+
+//4
+// A way to do it is to filter the array into new arrays, make one even, one odd. take the length of them and compare.
+
+//5
+
+let longNames = array4.filter((item) => {
+  return item.length > 6;
+});
+
+console.log(longNames);
