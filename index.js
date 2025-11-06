@@ -380,6 +380,7 @@ function allEven(arr) {
 
   //or
   //return arr.every(num => num % 2 === 0);
+  //The every() method returns true if the function returns true for all elements.
 }
 
 console.log(allEven(array7));
