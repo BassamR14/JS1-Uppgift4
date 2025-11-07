@@ -8,7 +8,7 @@ function findEven(arr) {
   for (i = 0; i < arr.length; i++) {
     if (arr[i] % 2 == 0) {
       //   console.log(arr[i]);
-      //if you want to an something to an array, use .push
+      //if you want to add something to an array, use .push
       evenArray.push(arr[i]);
     }
   }
@@ -17,7 +17,7 @@ function findEven(arr) {
   return evenArray;
 }
 
-console.log(findEven(array));
+// console.log(findEven(array));
 
 //2
 //Skapa en funktion som loopar igenom en array, och multiplicerar alla tal med varandra. T.ex [2,3,4] ska funktionen returnera 24. (2*3*4 = 24).
@@ -33,7 +33,7 @@ function multiplyArray(arr) {
   return multipliedNumber;
 }
 
-console.log(multiplyArray(array2));
+// console.log(multiplyArray(array2));
 
 //3
 // Skapa en funktion som loopar igenom en array och kollar om den innehåller “jordgubbar”. Om den innehåller jordgubbar bör den returnera true, annars returneras false.
@@ -62,7 +62,7 @@ function findStrawberry(arr) {
   return foundStrawberries;
 }
 
-console.log(findStrawberry(fruitArray));
+// console.log(findStrawberry(fruitArray));
 
 //4
 //Skapa en funktion som ska kunna ta in en array av siffror. Om arrayen har fler jämna tal än ojämna, returnera “Even array”. Om den har fler ojämna än jämna tal, returnera “Odd array”. Om den har lika många jämna som ojämna tal, returnera “Balanced array”.
@@ -117,7 +117,7 @@ function arrayType(arr) {
   }
 }
 
-console.log(arrayType(array3));
+// console.log(arrayType(array3));
 
 //5
 // Skapa en funktion som tar in en array över förnamn, och returnerar en ny array med alla namn som är längre än 6 bokstäver långa.
@@ -135,9 +135,10 @@ function sixLetters(arr) {
   return newArray4;
 }
 
-console.log(sixLetters(array4));
+// console.log(sixLetters(array4));
 
-//EXTRA
+//EXTRA----------------------------------------------------------------------------------------------------------------------------------------------------
+//Also did them using array methods
 //1
 
 let myArr = [1, 2, "One", true];
@@ -148,7 +149,10 @@ function readOutLout(arr) {
   }
 }
 
-readOutLout(myArr);
+// readOutLout(myArr);
+
+//Array method
+// let readAgain = myArr.forEach((item) => console.log(item));
 
 //2
 
@@ -165,14 +169,24 @@ function common2Array(arr, arr2) {
   }
 }
 
-common2Array(student1Courses, student2Courses);
+// common2Array(student1Courses, student2Courses);
+
+//Array method
+let commonStudies = student1Courses.filter((course) =>
+  student2Courses.includes(course)
+);
+// console.log(commonStudies);
 
 //3
 
 let food = ["Noodle", "Pasta", "Ice-cream"];
 let food2 = ["Fries", "Ice-cream", "Pizza"];
 
-common2Array(food, food2);
+// common2Array(food, food2);
+
+//Array method
+let commonFoods = food.filter((food) => food2.includes(food));
+// console.log(commonFoods);
 
 //4
 
@@ -220,7 +234,14 @@ function common3Array(arr1, arr2, arr3) {
   }
 }
 
-common3Array(values1, values2, values3);
+// common3Array(values1, values2, values3);
+
+//Array method
+
+let commonThings = values1.filter(
+  (item) => values2.includes(item) || values3.includes(item)
+);
+// console.log(commonThings);
 
 //5
 
@@ -239,7 +260,13 @@ function makeLetters(arr) {
   }
 }
 
-makeLetters(furniture);
+// makeLetters(furniture);
+
+//Array method
+
+// let getLetters = furniture.forEach((word) =>
+// word.split("").forEach((letter) => console.log(letter))
+// );
 
 //Extra-Extra Read all about it
 //6
@@ -256,7 +283,12 @@ function largerThanTen(arr) {
   return moreThanTen;
 }
 
-console.log(largerThanTen(array5));
+// console.log(largerThanTen(array5));
+
+//Array method
+
+let tenAndAbove = array5.filter((number) => number > 10);
+// console.log(tenAndAbove);
 
 //7
 
@@ -268,7 +300,15 @@ function addNumbers(arr) {
   return sum;
 }
 
-console.log(addNumbers(array2));
+// console.log(addNumbers(array2));
+
+//Array method
+
+let addition = array2.reduce((number, currentValue) => {
+  return number + currentValue;
+}, 0);
+
+// console.log(addition);
 
 //8
 
@@ -278,7 +318,12 @@ function checkBanana(arr) {
   }
 }
 
-console.log(checkBanana(fruitArray));
+// console.log(checkBanana(fruitArray));
+
+//Array method
+
+let isBanana = fruitArray.includes("banana");
+// console.log(isBanana);
 
 //9
 
@@ -304,7 +349,24 @@ function positiveNegative(arr) {
   }
 }
 
-positiveNegative(array6);
+// positiveNegative(array6);
+
+//Array method
+
+let positiveNum = array6.filter((number) => number % 2 == 0).length;
+let netgativeNum = array6.filter((number) => number % 2 == 1).length;
+
+function positiveOrNegative(pos, neg) {
+  if (pos > neg) {
+    console.log("positive");
+  } else if (pos < neg) {
+    console.log("negative");
+  } else if (pos == neg) {
+    console.log("balanced");
+  }
+}
+
+// positiveOrNegative(positiveNum, netgativeNum);
 
 //10
 
@@ -319,7 +381,15 @@ function startWithA(arr) {
   return nameStartWithA;
 }
 
-console.log(startWithA(array4));
+// console.log(startWithA(array4));
+
+//Array method
+
+let aFirstLetter = array4.filter((word) => {
+  return word.charAt(0) === "a";
+});
+
+// console.log(aFirstLetter);
 
 //11
 
@@ -339,7 +409,9 @@ function returnSmallestNumber(arr) {
   // console.log(smallestNumber);
 }
 
-returnSmallestNumber(array5);
+// returnSmallestNumber(array5);
+
+//Array method
 
 //12
 
@@ -355,7 +427,13 @@ function findE(arr) {
   console.log("words with e: " + wordsWithE);
 }
 
-findE(array4);
+// findE(array4);
+
+//Array method
+
+let whoHasE = array4.filter((word) => word.includes("e"));
+
+// console.log(whoHasE);
 
 //13
 
@@ -383,9 +461,17 @@ function allEven(arr) {
   //The every() method returns true if the function returns true for all elements.
 }
 
-console.log(allEven(array7));
+// console.log(allEven(array7));
 
-// 1-5 again but without using for loops
+//Array method
+
+let isEven = array7.every((number) => number % 2 == 0);
+
+// console.log(isEven);
+
+//
+// 1-5 again but without using for loops - Array Methods
+//
 
 //1
 
@@ -393,7 +479,7 @@ let evenNumberArray = array.filter((item) => {
   return item % 2 == 0;
 });
 
-console.log(evenNumberArray);
+// console.log(evenNumberArray);
 
 //2
 
@@ -401,13 +487,13 @@ let mulpliedNumber2 = array2.reduce((multiplicationResult, item) => {
   return item * multiplicationResult;
 }, 1);
 
-console.log(mulpliedNumber2);
+// console.log(mulpliedNumber2);
 
 //3
 
 let includesStrawberry = fruitArray.includes("strawberry");
 
-console.log(includesStrawberry);
+// console.log(includesStrawberry);
 
 //4
 // A way to do it is to filter the array into new arrays, make one even, one odd. take the length of them and compare.
@@ -418,4 +504,88 @@ let longNames = array4.filter((item) => {
   return item.length > 6;
 });
 
-console.log(longNames);
+// console.log(longNames);
+
+//Extra Questions 7-nov Array Methods-----------------------------------------------------------------------------------------------------------------------------
+
+//1
+
+let names = ["layla", "noor", "mahmood", "hisham", "nadine"];
+
+// let nameArray = names.forEach((name) => console.log(name));
+
+//2
+
+let nums = [5, 14, 7, 12, 10];
+
+let double = nums.map((number) => number * 2);
+
+// console.log(double);
+
+//3
+
+let nums2 = [14, 7, 60, 73, 53, 25, 47, 89, 41, 19];
+
+let even2 = nums2.filter((number) => number % 2 == 0);
+
+// console.log(even2);
+
+//4
+
+let added = nums.reduce((number, currentValue) => {
+  return number + currentValue;
+}, 0);
+
+// console.log(added);
+
+//5
+
+//find always returns the first value that fulfils the criterias
+let found = nums2.find((number) => number > 20);
+
+// console.log(found);
+
+//6
+
+//returns the first value that fulfils the criterias
+let indexFinder = names.findIndex((name) => name === "noor");
+
+// console.log(indexFinder);
+
+//7
+
+let checkNegative = nums2.some((number) => number < 0);
+
+// console.log(checkNegative);
+
+//8
+
+let checkNum = nums2.every((number) => number > 0);
+
+// console.log(checkNum);
+
+//9
+
+let empty = [];
+
+empty.push(5);
+empty.push(7);
+empty.push(14);
+empty.pop();
+// console.log(empty);
+
+// let moreArrays = empty.push(17);
+// console.log(moreArrays);
+//This returns the length of the array.
+
+// let lessArrays = empty.pop();
+// console.log(lessArrays);
+// This returns the last element of the array
+
+//10
+
+let sortedNums = nums2.sort((a, b) => a - b);
+//sort mutates the array it is used on
+
+console.log(sortedNums);
+console.log(nums2);
